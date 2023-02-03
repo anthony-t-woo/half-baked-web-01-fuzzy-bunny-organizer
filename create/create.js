@@ -10,7 +10,9 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // get the name and family id from the form
-
+    let formData = new FormData(form);
+    let data = { name: formData.get('bunny-name'), family_id: formData.get('family-id') };
+    console.log(data);
     // use createBunny to create a bunny with this name and family id
 
     form.reset();
@@ -23,7 +25,7 @@ window.addEventListener('load', async () => {
     for (let family of families) {
         const option = document.createElement('option');
         option.textContent = family.name;
-        option.value = 2;
+        option.value = family.id;
         familyOptionsEl.append(option);
     }
     // grab the select HTML element from the DOM
