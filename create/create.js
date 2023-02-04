@@ -14,7 +14,9 @@ form.addEventListener('submit', async (e) => {
     let data = { name: formData.get('bunny-name'), family_id: formData.get('family-id') };
     console.log(data);
     // use createBunny to create a bunny with this name and family id
-
+    await createBunny(formData.get('bunny-name'), formData.get('family-id'));
+    families = await getFamilies();
+    console.log('look here', families);
     form.reset();
 });
 
