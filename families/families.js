@@ -35,6 +35,9 @@ function displayFamilies() {
             bunnyDiv.textContent = bunny.name;
             bunnyDiv.classList.add('bunny');
             bunniesDiv.append(bunnyDiv);
+            bunnyDiv.addEventListener('click', () => {
+                console.log(`${bunny.name} was clicked`);
+            });
         }
         h3.textContent = family.name;
         familyDiv.append(h3, bunniesDiv);
