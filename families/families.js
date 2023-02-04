@@ -12,7 +12,6 @@ logoutButton.addEventListener('click', () => {
 });
 window.addEventListener('load', async () => {
     families = await getFamilies();
-    console.log(bunnies);
     displayFamilies();
 });
 
@@ -37,6 +36,7 @@ function displayFamilies() {
             bunniesDiv.append(bunnyDiv);
             bunnyDiv.addEventListener('click', async () => {
                 await deleteBunny(bunny.id);
+                families = await getFamilies();
                 displayFamilies();
             });
         }
